@@ -1,4 +1,7 @@
-## Ecco il mio primo progetto 
+# ***Progetto Javascript Basics***
+
+
+## Ecco il mio secondo progetto
 ___
 
 In questo progetto ho realizzato una pagina web nella quale è possibile modificare un counter tramite comandi
