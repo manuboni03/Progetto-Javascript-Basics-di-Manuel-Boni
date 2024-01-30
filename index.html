@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Ecco la mia applicazione che funziona come counter!">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/x-icon" href="img/img_calcolatrice.jpg">
+        <title>App Counter</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <meta name="og: title" content="App Counter"/>
+        <meta name="og: type" content="website"/>
+        <meta name="og: image" content="img/img_calcolatrice.jpg"/>
+        <meta name="og: image: type" content="image/jpeg"/>
+        <meta name="og: image: height" content="200px"/>
+        <meta name="og: image: width" content="200px"/>
+        <meta name="og: image: alt" content="Una calcolatrice matematica"/>
+        <meta name="og: url" content=""/> 
+    </head>
+
+    <body>
+        <div class="contenitore">
+            <h1>App Counter</h1>
+        </div>
+        <div class="container">
+            <h2>Questa pagina è un counter</h2>
+            <h3><em>Puoi decidere se incrementare o decrementare il punteggio sottostante</em></h3>
+            <h5>(basta premere "+" per aumentarlo e "-" per diminuirlo)</h5><hr/>
+            <h5>N.B: cliccando + o - aggiungi solo 1 al punteggio</h5>
+        </div>
+        <div class="container-fluid">
+            <div class="centrato">
+                <div class="row">
+                    <div class="col">
+                        <div class="box">
+                            <button type="button" class="btn btn-danger" id="decremento"><strong>-</strong></button>
+                        </div>
+                    </div>
+                    <div class="col" id="punteggio">
+                        <div class="box">
+                            <p><strong>0</strong></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="box">
+                            <button type="button" class="btn btn-success" id="incremento"><strong>+</strong></button>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="centro">
+                        <button type="button" class="btn btn-primary" id="rincomincia">Riparti da zero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h6>(Cliccando qui sotto ripartirai dall'inizio)</h6>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
