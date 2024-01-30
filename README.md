@@ -7,7 +7,7 @@ ___
 In questo progetto ho realizzato una pagina web nella quale è possibile modificare un counter tramite comandi
 specfici. 
 
-Per accedere ad essa, ecco il [Link](https://manuboni03.github.io/Progetto-Javascript-Basics-di-Manuel-Boni/index.html)
+**Per accedere ad essa, clicca qui su [Progetto](https://manuboni03.github.io/Progetto-Javascript-Basics-di-Manuel-Boni/index.html)**
 
 ## Introduttiva 
 
