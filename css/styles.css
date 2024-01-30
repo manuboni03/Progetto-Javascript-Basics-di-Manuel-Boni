@@ -38,7 +38,7 @@ strong{
 .box{
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 90px;
+    font-size: 70px;
 }
 
 .centrato{
@@ -57,7 +57,7 @@ strong{
 }
 
 #incremento, #decremento{
-    font-size: 90px;
+    font-size: 60px;
 }
 
 #rincomincia{
@@ -93,7 +93,7 @@ strong{
     }
     
     strong{
-        padding: 0 20px 30px 20px;
+        padding: 0 10px 30px 10px;
     }
     
     .contenitore{
@@ -124,7 +124,7 @@ strong{
     }
     
     #incremento, #decremento{
-        font-size: 30px;
+        font-size: 20px;
     }
     
     #rincomincia{

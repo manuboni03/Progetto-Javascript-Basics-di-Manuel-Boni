@@ -12,7 +12,7 @@ function Stampanumero(strnum){
 }
 
 function Cambiafont(){
-    punteggio.style.fontSize= "90px";
+    punteggio.style.fontSize= "70px";
     punteggio.style.fontWeight= "bold";
     punteggio.style.paddingRight= "20px";
     punteggio.style.paddingLeft= "20px";
