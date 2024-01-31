@@ -1,5 +1,5 @@
 
-let divbox= document.body.querySelector('.centrato');
+let divbox= document.body.querySelector('.contenitore-elementi');
 
 let punteggio= 0;
 
@@ -16,7 +16,12 @@ divbox.onclick= function(e){
         console.log(`Decremento: punteggio attuale--> ${punteggio}`);
     }
     else{
-        punteggio= 0;
-        console.log('Sei ripartito da zero');
+        if (punteggio === 0){
+            alert('Sei già a zero');
+        }
+        else{
+            punteggio= 0;
+            console.log('Sei a zero');
+        }
     }
 }
