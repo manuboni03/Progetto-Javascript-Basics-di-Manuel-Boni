@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-h2,h3,h5{
+h2,h3{
     text-align: center;
     padding-bottom: 40px;
     padding-top: 30px;
@@ -71,7 +71,7 @@ strong{
         box-sizing: border-box;
     }
     
-    h2,h3,h5{
+    h2,h3{
         text-align: center;
         padding-bottom: 40px;
         padding-top: 30px;
@@ -93,7 +93,7 @@ strong{
     }
     
     strong{
-        font-size: 90px;
+        font-size: 50px;
         padding: 0 10px 30px 10px;
     }
     
@@ -125,7 +125,7 @@ strong{
     }
     
     #incremento, #decremento{
-        font-size: 20px;
+        font-size: 50px;
     }
     
     #rincomincia{
