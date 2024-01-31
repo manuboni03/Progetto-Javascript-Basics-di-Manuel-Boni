@@ -16,12 +16,7 @@ divbox.onclick= function(e){
         console.log(`Decremento: punteggio attuale--> ${punteggio}`);
     }
     else{
-        if (punteggio === 0){
-            alert('Sei già a zero');
-        }
-        else{
-            punteggio= 0;
-            console.log('Sei a zero');
-        }
+        punteggio= 0;
+        console.log('Sei a zero');
     }
 }
