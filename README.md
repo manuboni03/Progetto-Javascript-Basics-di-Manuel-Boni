@@ -36,18 +36,77 @@ La pagina con cui si interfaccia l'utente è stata realizzata interamente con HT
 aggiunto l'utilizzo della libreria Bootstrap per rendere il layout responsive più efficace
 
 Per quanto riguarda i pulsanti è stata aggiunta anche una componente Javascript che ne
-permette il funzionamento. Basta assegnare un **id** univoco nei **button** in *index.html* e riprenderli in *script.js*
-in questo modo: 
+permette il funzionamento. Entrambi sono stati inizializzati attraverso funzioni che ne hanno riportato poi l'**id**;
+eccone un esempio dove viene creato il pulsante *incremento*:
 
 ```javascript
-let incremento= document.getElementById('incremento');
-let decremento= document.getElementById('decremento');
-let punteggio= document.getElementById('punteggio');
-let rincomincia= document.getElementById('rincomincia');
+function creaIncremento(){
+    let incremento= document.createElement('button');
+    incremento.id= 'incremento';
+    incremento.classList.add('btn', 'btn-success');
+    incremento.innerHTML= '<strong>+</strong>';
+    box3.appendChild(incremento);
+
+    return incremento.id;
+}
+```
+
+Per il punteggio è un po' diverso in quanto ho inizializzato il nodo di testo fuori dalla funzione per poi richiamarlo
+al momento del cambio valore del counter, in questo modo: 
+
+```javascript
+let punteggio= document.createElement('p');
+let score= 0;
+
+function creaPunteggio(){
+    punteggio.id= 'punteggio';
+    punteggio.innerHTML= '<strong>0</strong>';
+    box2.appendChild(punteggio);
+
+    return punteggio.id;
+}
+```
+Infine ho creato un Event Delegation per il click del mouse con un istruzione **if** la quale in base all'id 
+riportato dal click compie istruzioni di output specifiche: 
+
+```javascript
+divbox.onclick= function(e){
+    let target= e.target.closest('button').id;
+
+    if(target === 'incremento'){
+        ++score;
+        cambiaestampapunteggio(score);
+        console.log(`Incremento: punteggio attuale--> ${score}`);
+    }
+    else if(target === 'decremento'){
+        --score;
+        cambiaestampapunteggio(score);
+        console.log(`Decremento: punteggio attuale--> ${score}`);
+    }
+    else{
+        score= 0;
+        cambiaestampapunteggio(score);
+        console.log('Sei a zero');
+    }
+}
 ```
 
 Così facendo possiamo modificare il punteggio nella pagina tramite funzioni che agiscono a seconda
-del nostro click.
+del nostro click. Come ultmo passaggio la funzione ***cambiaestampapunteggio(score);*** cambia lo stile di
+default del'output per convertirlo a quello del formato iniziale:
+
+```javascript
+function cambiaestampapunteggio(num){
+    
+    punteggio.style.fontSize= '50px';
+    punteggio.style.fontWeight= 'bold';
+    punteggio.style.marginRight= '10px';
+    punteggio.style.marginLeft= '10px';
+
+    punteggio.innerHTML= `${num}`;
+    box2.appendChild(punteggio);
+}
+```
 
 
 
