@@ -49,6 +49,10 @@ function creaIncremento(){
 
     return incremento.id;
 }
+
+let incrementoid= creaIncremento();
+
+//stessa cosa per il pulsante decremento
 ```
 
 Per il punteggio è un po' diverso in quanto ho inizializzato il nodo di testo fuori dalla funzione per poi richiamarlo
