@@ -1,53 +1,73 @@
 
-let incremento= document.getElementById('incremento');
-let decremento= document.getElementById('decremento');
-let punteggio= document.getElementById('punteggio');
-let rincomincia= document.getElementById('rincomincia');
+let divbox= document.body.querySelector('.contenitore-elementi');
+let box1= document.body.querySelector('.primo');
+let box2= document.body.querySelector('.secondo');
+let box3= document.body.querySelector('.terzo');
+
+let punteggio= document.createElement('p');
+let score= 0;
 
 
-let numero= 0;
+function creaDecremento(){
+    let decremento= document.createElement('button');
+    decremento.id= 'decremento';
+    decremento.classList.add('btn', 'btn-danger');
+    decremento.innerHTML= '<strong>-</strong>';
+    box1.appendChild(decremento);
 
-function Stampanumero(strnum){
-    punteggio.innerHTML=`${strnum}`;
+    return decremento.id;
 }
 
-function Cambiafont(){
-    punteggio.style.fontSize= "70px";
-    punteggio.style.fontWeight= "bold";
-    punteggio.style.paddingRight= "20px";
-    punteggio.style.paddingLeft= "20px";
+function creaPunteggio(){
+    punteggio.id= 'punteggio';
+    punteggio.innerHTML= '<strong>0</strong>';
+    box2.appendChild(punteggio);
+
+    return punteggio.id;
 }
 
-function Cambiapunteggio(risp, tot){
-    if(risp===true){
-        ++tot;
-        console.log(`Incremento. Il punteggio attuale è: ${tot}`);
+function creaIncremento(){
+    let incremento= document.createElement('button');
+    incremento.id= 'incremento';
+    incremento.classList.add('btn', 'btn-success');
+    incremento.innerHTML= '<strong>+</strong>';
+    box3.appendChild(incremento);
+
+    return incremento.id;
+}
+
+let decrementoid= creaDecremento();
+let punteggioid= creaPunteggio();
+let incrementoid= creaIncremento();
+
+
+function cambiaestampapunteggio(num){
+    
+    punteggio.style.fontSize= '50px';
+    punteggio.style.fontWeight= 'bold';
+    punteggio.style.marginRight= '10px';
+    punteggio.style.marginLeft= '10px';
+
+    punteggio.innerHTML= `${num}`;
+    box2.appendChild(punteggio);
+}
+
+divbox.onclick= function(e){
+    let target= e.target.closest('button').id;
+
+    if(target === 'incremento'){
+        ++score;
+        cambiaestampapunteggio(score);
+        console.log(`Incremento: punteggio attuale--> ${score}`);
+    }
+    else if(target === 'decremento'){
+        --score;
+        cambiaestampapunteggio(score);
+        console.log(`Decremento: punteggio attuale--> ${score}`);
     }
     else{
-        --tot;
-        console.log(`Decremento. IL punteggio attuale è: ${tot}`);
+        score= 0;
+        cambiaestampapunteggio(score);
+        console.log('Sei a zero');
     }
-
-    return tot;
 }
-
-incremento.addEventListener('click', (e)=>{
-    let risposta= true;
-    numero= Cambiapunteggio(risposta, numero);
-    Cambiafont();
-    Stampanumero(`${numero}`);
-});
-
-decremento.addEventListener('click', (e)=>{
-    let risposta= false;
-    numero= Cambiapunteggio(risposta, numero);
-    Cambiafont();
-    Stampanumero(`${numero}`);
-});
-
-rincomincia.addEventListener('click', ()=>{
-    numero= 0;
-    Stampanumero(`${numero}`);
-    console.log('Sei ripartito/a da zero');
-});
-

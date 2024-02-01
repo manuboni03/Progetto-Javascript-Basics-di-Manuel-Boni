@@ -27,6 +27,7 @@ h6{
 
 strong{
     padding: 0 20px 30px 20px;
+    font-size: 50px;
 }
 
 .contenitore{
@@ -38,7 +39,6 @@ strong{
 .box{
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 70px;
 }
 
 .centrato{
@@ -57,7 +57,7 @@ strong{
 }
 
 #incremento, #decremento{
-    font-size: 60px;
+    font-size: 50px;
 }
 
 #rincomincia{
@@ -106,7 +106,6 @@ strong{
     .box{
         margin-left: 10px;
         margin-right: 10px;
-        font-size: 30px;
     }
     
     .centrato{
