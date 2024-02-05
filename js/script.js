@@ -1,55 +1,38 @@
 
 let divbox= document.body.querySelector('.contenitore-elementi');
-let box1= document.body.querySelector('.primo');
-let box2= document.body.querySelector('.secondo');
-let box3= document.body.querySelector('.terzo');
+let boxelementi= document.body.querySelector('.centrato');
+let contenitorenodi= document.body.querySelector('.box');
 
-let punteggio= document.createElement('p');
+function creaNodo(selettore, tag, id, classlist, nodo){
+    let box= document.body.querySelector(selettore);
+    let elemento= document.createElement(tag);
+    elemento.id= id;
+    elemento.classList.add(classlist[0], classlist[1]);
+    elemento.innerHTML= nodo;
+    box.appendChild(elemento);
+
+    return elemento;
+}
+
+let button1= creaNodo('.primo', 'button', 'decremento', ['btn', 'btn-danger'], '<strong>-</strong>');
+let punti= creaNodo('.secondo', 'p', 'punteggio', '', '<strong>0</strong>');
+let button2= creaNodo('.terzo', 'button', 'incremento', ['btn', 'btn-success'], '<strong>+</strong>');
+
 let score= 0;
 
-
-function creaDecremento(){
-    let decremento= document.createElement('button');
-    decremento.id= 'decremento';
-    decremento.classList.add('btn', 'btn-danger');
-    decremento.innerHTML= '<strong>-</strong>';
-    box1.appendChild(decremento);
-
-    return decremento.id;
-}
-
-function creaPunteggio(){
-    punteggio.id= 'punteggio';
-    punteggio.innerHTML= '<strong>0</strong>';
-    box2.appendChild(punteggio);
-
-    return punteggio.id;
-}
-
-function creaIncremento(){
-    let incremento= document.createElement('button');
-    incremento.id= 'incremento';
-    incremento.classList.add('btn', 'btn-success');
-    incremento.innerHTML= '<strong>+</strong>';
-    box3.appendChild(incremento);
-
-    return incremento.id;
-}
-
-let decrementoid= creaDecremento();
-let punteggioid= creaPunteggio();
-let incrementoid= creaIncremento();
-
-
 function cambiaestampapunteggio(num){
-    
-    punteggio.style.fontSize= '50px';
-    punteggio.style.fontWeight= 'bold';
-    punteggio.style.marginRight= '10px';
-    punteggio.style.marginLeft= '10px';
+    punti.style.fontSize= '50px';
+    punti.style.fontWeight= 'bold';
+    punti.style.marginRight= '10px';
+    punti.style.textAlign= 'center';
 
-    punteggio.innerHTML= `${num}`;
-    box2.appendChild(punteggio);
+    punti.style.width= '100px';
+    button1.style.width= '100px';
+    button2.style.width= '100px';
+
+    boxelementi.style.justifyContent= 'center';
+    
+    punti.innerHTML= `${num}`;
 }
 
 divbox.onclick= function(e){
