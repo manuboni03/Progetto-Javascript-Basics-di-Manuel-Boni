@@ -53,7 +53,7 @@ strong{
 }
 
 .secondo{
-    width: 100px;
+    width: 80px;
 }
 
 #punteggio{
@@ -63,7 +63,7 @@ strong{
 
 #incremento, #decremento{
     font-size: 50px;
-    width: 100px;
+    width: 80px;
 }
 
 #rincomincia{
@@ -126,7 +126,7 @@ strong{
     }
 
     .secondo{
-        width: 100px;
+        width: 80px;
     }
     
     #punteggio{
@@ -136,7 +136,7 @@ strong{
     
     #incremento, #decremento{
         font-size: 50px;
-        width: 100px;
+        width: 80px;
     }
     
     #rincomincia{
