@@ -35,40 +35,29 @@ ___
 La pagina con cui si interfaccia l'utente è stata realizzata interamente con HTML e CSS, a cui è stato
 aggiunto l'utilizzo della libreria Bootstrap per rendere il layout responsive più efficace
 
-Per quanto riguarda i pulsanti è stata aggiunta anche una componente Javascript che ne
-permette il funzionamento. Entrambi sono stati inizializzati attraverso funzioni che ne hanno riportato poi l'**id**;
-eccone un esempio dove viene creato il pulsante *incremento*:
+Per quanto riguarda i pulsanti e il punteggio ho creato una sola funzione a cui passare i vari valori per
+la creazione di un nodo e tutte le modifiche da apportargli:
 
 ```javascript
-function creaIncremento(){
-    let incremento= document.createElement('button');
-    incremento.id= 'incremento';
-    incremento.classList.add('btn', 'btn-success');
-    incremento.innerHTML= '<strong>+</strong>';
-    box3.appendChild(incremento);
+function creaNodo(selettore, tag, id, classlist, nodo){
+    let box= document.body.querySelector(selettore);
+    let elemento= document.createElement(tag);
+    elemento.id= id;
+    elemento.classList.add(classlist[0], classlist[1]);
+    elemento.innerHTML= nodo;
+    box.appendChild(elemento);
 
-    return incremento.id;
+    return elemento;
 }
-
-let incrementoid= creaIncremento();
-
-//stessa cosa per il pulsante decremento
 ```
 
-Per il punteggio è un po' diverso in quanto ho inizializzato il nodo di testo fuori dalla funzione per poi richiamarlo
-al momento del cambio valore del counter, in questo modo: 
+Questa funzione restituisce il tag dell'elemento, che servirà poi per modificarne lo stile. 
+Subito dopo ho passato per 3 volte (2 per i pulsanti e uno per il punteggio) i valori alla funzione in questo modo: 
 
 ```javascript
-let punteggio= document.createElement('p');
-let score= 0;
-
-function creaPunteggio(){
-    punteggio.id= 'punteggio';
-    punteggio.innerHTML= '<strong>0</strong>';
-    box2.appendChild(punteggio);
-
-    return punteggio.id;
-}
+let button1= creaNodo('.primo', 'button', 'decremento', ['btn', 'btn-danger'], '<strong>-</strong>');
+let punti= creaNodo('.secondo', 'p', 'punteggio', '', '<strong>0</strong>');
+let button2= creaNodo('.terzo', 'button', 'incremento', ['btn', 'btn-success'], '<strong>+</strong>');
 ```
 Infine ho creato un Event Delegation per il click del mouse con un istruzione **if** la quale in base all'id 
 riportato dal click compie istruzioni di output specifiche: 
@@ -101,14 +90,18 @@ default del'output per convertirlo a quello del formato iniziale:
 
 ```javascript
 function cambiaestampapunteggio(num){
-    
-    punteggio.style.fontSize= '50px';
-    punteggio.style.fontWeight= 'bold';
-    punteggio.style.marginRight= '10px';
-    punteggio.style.marginLeft= '10px';
+    punti.style.fontSize= '50px';
+    punti.style.fontWeight= 'bold';
+    punti.style.marginRight= '10px';
+    punti.style.textAlign= 'center';
 
-    punteggio.innerHTML= `${num}`;
-    box2.appendChild(punteggio);
+    punti.style.width= '100px';
+    button1.style.width= '100px';
+    button2.style.width= '100px';
+
+    boxelementi.style.justifyContent= 'center';
+    
+    punti.innerHTML= `${num}`;
 }
 ```
 
