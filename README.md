@@ -95,9 +95,9 @@ function cambiaestampapunteggio(num){
     punti.style.marginRight= '10px';
     punti.style.textAlign= 'center';
 
-    punti.style.width= '100px';
-    button1.style.width= '100px';
-    button2.style.width= '100px';
+    punti.style.width= '80px';
+    button1.style.width= '80px';
+    button2.style.width= '80px';
 
     boxelementi.style.justifyContent= 'center';
     
